@@ -1,0 +1,33 @@
+name: Update, removal or broken link
+description: A project was archived, changed license, moved, or a link stopped working.
+title: "Update: "
+labels: ["status update"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Which entry?
+      placeholder: e.g. DarkRP
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: What changed?
+      options:
+        - Project is archived, deleted or abandoned
+        - Project no longer works with the current game
+        - License or language tag is wrong
+        - Link is broken or the repo moved
+        - Description is wrong or outdated
+        - Entry doesn't belong here (cheat, stealer, leak, etc.)
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details and a source
+      description: Please include a link to the repo, a release note or an announcement if you can.
+    validations:
+      required: true
