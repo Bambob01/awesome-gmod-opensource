@@ -1,0 +1,63 @@
+name: Suggest a project or resource
+description: Don't want to edit the README yourself? Suggest something and we'll add it.
+title: "Add: "
+labels: ["suggestion"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: e.g. GLuaTest
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Source repository or official link
+      description: GitHub, GitLab or Codeberg repo for projects; official site for resources.
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      options:
+        - Server Administration and Anti-Cheat
+        - Gamemodes and Frameworks
+        - Addon Development Tools
+        - Libraries and Binary Modules
+        - Client Fixes and Performance
+        - Learning Resources and Communities
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License (projects only)
+      description: SPDX identifier such as MIT or GPL-3.0, or "Custom" / "No license". Leave blank if unsure.
+      placeholder: e.g. MIT
+  - type: input
+    id: language
+    attributes:
+      label: Main language (projects only)
+      placeholder: e.g. Lua
+  - type: textarea
+    id: description
+    attributes:
+      label: One-sentence description
+      description: What does it do? Keep it factual.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: It's free and its source code is public.
+          required: true
+        - label: It's not a cheat, Lua stealer, exploit tool, or a leaked or reuploaded paid addon.
+          required: true
+        - label: It's not archived and still works with the current game.
+          required: true
+        - label: I'm involved with this project (optional, totally fine either way).
